@@ -8,11 +8,9 @@ public class Main {
                 if( userInput.charAt(index) != userInput.charAt((userInput.length() - 1) - index) ){
                     System.out.println(userInput + " Is not a palindrome");
                     break;
-                } else {
-                      System.out.println(userInput + " Is a palindrome");
                 }
-
         }
+        System.out.println(userInput + " Is a palindrome");
     }
     public static void main(String[] args) {
         String userInput;
