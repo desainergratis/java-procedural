@@ -18,11 +18,51 @@ public class Main {
             }
         }
     }
+
+    static int[] separeteArray(int[] data, int[] ascendingData) {
+
+        // fill descending Array with ascending data
+        // Separate to make sure the array address different
+        for(int index = 0; index < data.length; index++) {
+                    data[index] = ascendingData[index];
+
+        }
+        return data;
+    }
+
+    static void descendingFunct(int[] data) {
+
+        for(int index = 0; index < data.length / 2; index++) {
+            int temp;
+            // If first data < last data
+            if(data[index] < data[(data.length - 1) - index]){
+                // then swap
+                temp = data[(data.length - 1) - index];
+                data[(data.length - 1) - index] = data[index];
+                data[index] = temp;
+            }
+        }
+        System.out.println("Descending : "+ Arrays.toString(data));
+    }
+
+
     public static void main(String[] args) {
         int[] dataArray = {25,30,65,85,45,100,1,2,3,5,8};
-
+        int[] descendingArray = new int[dataArray.length];
+    
         // Sort from unordered to ordered in a ascending
         ascendingFunct(dataArray);
+
+        // Separate array
+        separeteArray(descendingArray,dataArray);
+
+        // Sort to descending ways
+        descendingFunct(descendingArray);
+      
+        
+        
+        
+       
         
     }
 }
